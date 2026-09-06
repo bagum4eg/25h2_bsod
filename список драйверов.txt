@@ -1,0 +1,10 @@
+PS C:\WINDOWS\system32> driverquery /v /fo csv > "%USERPROFILE%\Desktop\drivers.csv"
+out-file : Не удалось найти часть пути "C:\WINDOWS\system32\%USERPROFILE%\Desktop\drivers.csv
+".
+строка:1 знак:1
++ driverquery /v /fo csv > "%USERPROFILE%\Desktop\drivers.csv"
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [Out-File], DirectoryNotFoundException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.OutFileCommand
+
+PS C:\WINDOWS\system32>
