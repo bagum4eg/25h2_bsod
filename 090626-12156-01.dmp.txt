@@ -1,0 +1,212 @@
+
+************* Preparing the environment for Debugger Extensions Gallery repositories **************
+   ExtensionRepository : Implicit
+   UseExperimentalFeatureForNugetShare : true
+   AllowNugetExeUpdate : true
+   NonInteractiveNuget : true
+   AllowNugetMSCredentialProviderInstall : true
+   AllowParallelInitializationOfLocalRepositories : true
+
+   -- Configuring repositories
+      ----> Repository : LocalInstalled, Enabled: true
+      ----> Repository : UserExtensions, Enabled: true
+
+>>>>>>>>>>>>> Preparing the environment for Debugger Extensions Gallery repositories completed, duration 0.000 seconds
+
+************* Waiting for Debugger Extensions Gallery to Initialize **************
+
+>>>>>>>>>>>>> Waiting for Debugger Extensions Gallery to Initialize completed, duration 0.047 seconds
+   ----> Repository : UserExtensions, Enabled: true, Packages count: 0
+   ----> Repository : LocalInstalled, Enabled: true, Packages count: 46
+
+Microsoft (R) Windows Debugger Version 10.0.29617.1000 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+
+Loading Dump File [E:\win_upd_recovery\25h2 bsod\090626-12156-01.dmp]
+Mini Kernel Dump File: Only registers and stack trace are available
+
+WARNING: TriageDumpDataExtArray.HeaderSize is 0
+WARNING: Failed to read dump data exension data
+Symbol search path is: srv*
+Executable search path is: 
+Windows 10 Kernel Version 26100 MP (12 procs) Free x64
+Product: WinNt, suite: TerminalServer SingleUserTS
+Kernel base = 0xfffff800`b2e00000 PsLoadedModuleList = 0xfffff800`b3cf5470
+Debug session time: Sun Sep  6 10:03:28.686 2026 (UTC + 4:00)
+System Uptime: 0 days 0:55:17.431
+Loading Kernel Symbols
+...............................................................
+................................................................
+................................................................
+.................................................
+Loading User Symbols
+
+Loading unloaded module list
+....................
+For analysis of this file, run !analyze -v
+nt!KeBugCheckEx:
+fffff800`b32f9220 48894c2408      mov     qword ptr [rsp+8],rcx ss:0018:fffffa8d`e684f530=000000000000009f
+1: kd> !analyze -v
+Loading Kernel Symbols
+...............................................................
+................................................................
+................................................................
+.................................................
+Loading User Symbols
+
+Loading unloaded module list
+....................
+*******************************************************************************
+*                                                                             *
+*                        Bugcheck Analysis                                    *
+*                                                                             *
+*******************************************************************************
+
+DRIVER_POWER_STATE_FAILURE (9f)
+A driver has failed to complete a power IRP within a specific time.
+Arguments:
+Arg1: 0000000000000003, A device object has been blocking an IRP for too long a time
+Arg2: ffffcd83b00f0360, Physical Device Object of the stack
+Arg3: fffffa8de684f580, nt!TRIAGE_9F_POWER on Win7 and higher, otherwise the Functional Device Object of the stack
+Arg4: ffffcd83acff6010, The blocked IRP
+
+Debugging Details:
+------------------
+
+
+KEY_VALUES_STRING: 1
+
+    Key  : Analysis.CPU.mSec
+    Value: 2093
+
+    Key  : Analysis.Elapsed.mSec
+    Value: 83636
+
+    Key  : Analysis.IO.Other.Mb
+    Value: 18
+
+    Key  : Analysis.IO.Read.Mb
+    Value: 1
+
+    Key  : Analysis.IO.Write.Mb
+    Value: 27
+
+    Key  : Analysis.Init.CPU.mSec
+    Value: 1468
+
+    Key  : Analysis.Init.Elapsed.mSec
+    Value: 305980
+
+    Key  : Analysis.Memory.CommitPeak.Mb
+    Value: 98
+
+    Key  : Analysis.Version.DbgEng
+    Value: 10.0.29617.1000
+
+    Key  : Analysis.Version.Description
+    Value: 10.2604.29.1 amd64fre
+
+    Key  : Analysis.Version.Ext
+    Value: 1.2604.29.1
+
+    Key  : Bugcheck.Code.LegacyAPI
+    Value: 0x9f
+
+    Key  : Bugcheck.Code.TargetModel
+    Value: 0x9f
+
+    Key  : Dump.Attributes.AsUlong
+    Value: 0x21008
+
+    Key  : Dump.Attributes.DiagDataWrittenToHeader
+    Value: 1
+
+    Key  : Dump.Attributes.ErrorCode
+    Value: 0x0
+
+    Key  : Dump.Attributes.KernelGeneratedTriageDump
+    Value: 1
+
+    Key  : Dump.Attributes.LastLine
+    Value: Dump completed successfully.
+
+    Key  : Dump.Attributes.ProgressPercentage
+    Value: 0
+
+    Key  : Failure.Bucket
+    Value: 0x9F_3_ACPI_IMAGE_pci.sys
+
+    Key  : Failure.Hash
+    Value: {20ddeb92-07eb-ebdc-bd08-44da71ffbd68}
+
+
+BUGCHECK_CODE:  9f
+
+BUGCHECK_P1: 3
+
+BUGCHECK_P2: ffffcd83b00f0360
+
+BUGCHECK_P3: fffffa8de684f580
+
+BUGCHECK_P4: ffffcd83acff6010
+
+FILE_IN_CAB:  090626-12156-01.dmp
+
+DUMP_FILE_ATTRIBUTES: 0x21008
+  Kernel Generated Triage Dump
+
+FAULTING_THREAD:  ffffcd83ab6c8040
+
+DRVPOWERSTATE_SUBCODE:  3
+
+IMAGE_NAME:  pci.sys
+
+MODULE_NAME: pci
+
+FAULTING_MODULE: fffff800455d0000 pci
+
+BLACKBOXACPI: 1 (!blackboxacpi)
+
+
+BLACKBOXBSD: 1 (!blackboxbsd)
+
+
+BLACKBOXNTFS: 1 (!blackboxntfs)
+
+
+BLACKBOXPNP: 1 (!blackboxpnp)
+
+
+BLACKBOXWINLOGON: 1 (!blackboxwinlogon) (!blackboxwinlogonnotify)
+
+
+CUSTOMER_CRASH_COUNT:  1
+
+PROCESS_NAME:  System
+
+STACK_TEXT:  
+fffffa8d`e684f528 fffff800`b33cab7d     : 00000000`0000009f 00000000`00000003 ffffcd83`b00f0360 fffffa8d`e684f580 : nt!KeBugCheckEx
+fffffa8d`e684f530 fffff800`b33ca97c     : 00000000`00000000 fffffa8d`e684f970 ffffcd83`b0058298 fffffa8d`e684f709 : nt!PopIrpWatchdogBugcheck+0x1f5
+fffffa8d`e684f610 fffff800`b310b995     : 00000000`00000015 00000000`00000001 fffffa8d`00000000 ffff8e81`00000002 : nt!PopIrpWatchdog+0xc
+fffffa8d`e684f640 fffff800`b310abe5     : 00000007`b957ecb0 00000000`0000000f fffffa8d`e684f879 ffff8e81`c8f9f180 : nt!KiProcessExpiredTimerList+0x505
+fffffa8d`e684f770 fffff800`b307895e     : fffffa8d`e684f9b0 00000000`00000000 ffff8e81`c8f9f180 ffffcd83`ab6c8040 : nt!KiTimerExpiration+0x2b5
+fffffa8d`e684f8b0 fffff800`b34ad59e     : ffff8e81`c8f9f180 ffff8e81`c8f9f180 ffffcd83`ab6c8040 ffffcd83`ab703480 : nt!KiRetireDpcList+0xd0e
+fffffa8d`e684fb40 00000000`00000000     : fffffa8d`e6850000 fffffa8d`e6849000 00000000`00000000 00000000`00000000 : nt!KiIdleLoop+0x9e
+
+
+IMAGE_VERSION:  10.0.26100.8972
+
+STACK_COMMAND: .process /r /p 0xfffff800b3dcff00; .thread /r /p 0xffffcd83ab6c8040 ; kb
+
+FAILURE_BUCKET_ID:  0x9F_3_ACPI_IMAGE_pci.sys
+
+OSPLATFORM_TYPE:  x64
+
+OSNAME:  Windows 10
+
+FAILURE_ID_HASH:  {20ddeb92-07eb-ebdc-bd08-44da71ffbd68}
+
+Followup:     MachineOwner
+---------
+
